@@ -145,21 +145,13 @@ wheels = [
 [[package]]
 name = "dbsc"
 version = "0.1.0"
-source = { directory = "../dbsc-python" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cryptography" },
 ]
-
-[package.metadata]
-requires-dist = [{ name = "cryptography", specifier = ">=46" }]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "playwright", specifier = ">=1.63" },
-    { name = "pytest", specifier = ">=9.1" },
-    { name = "pytest-asyncio", specifier = ">=1.4" },
-    { name = "ruff", specifier = ">=0.16" },
-    { name = "ty", specifier = ">=0.0.83" },
+sdist = { url = "https://files.pythonhosted.org/packages/88/49/5ca18fc5a2da6981ea72615a18522890e302775512dbebe67f1b67207e67/dbsc-0.1.0.tar.gz", hash = "sha256:47910d6f7b82b9afa0a61fa60768d6cc7279a2b04f32f7f3c80bed2d9ccb3f13", size = 44151, upload-time = "2026-09-24T03:52:59.017Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b3/80/d2b83446096a9cef7575bab5c17b8f8c76691585d960e261304af4006d9c/dbsc-0.1.0-py3-none-any.whl", hash = "sha256:1f3296ccf4a2c2f834b720da93e5b0e5a3992da1dbed51571fbefa0afa7cf134", size = 43168, upload-time = "2026-09-24T03:52:57.82Z" },
 ]
 
 [[package]]
@@ -181,8 +173,8 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "dbsc", directory = "../dbsc-python" },
-    { name = "flasgo", directory = "../flasgo" },
+    { name = "dbsc" },
+    { name = "flasgo" },
 ]
 
 [package.metadata.requires-dev]
@@ -195,44 +187,16 @@ dev = [
 
 [[package]]
 name = "flasgo"
-version = "0.9.1"
-source = { directory = "../flasgo" }
+version = "0.10.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
     { name = "uvicorn", extra = ["standard"] },
     { name = "watchfiles" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "alembic", marker = "extra == 'db'", specifier = "==1.19.1" },
-    { name = "jinja2", specifier = "==3.1.6" },
-    { name = "opentelemetry-api", marker = "extra == 'otel'", specifier = "==1.44.0" },
-    { name = "opentelemetry-exporter-otlp-proto-http", marker = "extra == 'otel'", specifier = "==1.44.0" },
-    { name = "opentelemetry-instrumentation-asgi", marker = "extra == 'otel'", specifier = "==0.65b0" },
-    { name = "opentelemetry-sdk", marker = "extra == 'otel'", specifier = "==1.44.0" },
-    { name = "prometheus-client", marker = "extra == 'metrics'", specifier = "==0.26.0" },
-    { name = "pyjwt", marker = "extra == 'jwt'", specifier = "==2.13.0" },
-    { name = "redis", marker = "extra == 'redis'", specifier = "==8.1.0" },
-    { name = "uvicorn", extras = ["standard"], specifier = "==0.52.4" },
-    { name = "watchfiles", specifier = "==1.2.0" },
-]
-provides-extras = ["db", "jwt", "metrics", "otel", "redis"]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "alembic", specifier = "==1.19.1" },
-    { name = "openapi-spec-validator", specifier = "==0.9.0" },
-    { name = "opentelemetry-api", specifier = "==1.44.0" },
-    { name = "opentelemetry-exporter-otlp-proto-http", specifier = "==1.44.0" },
-    { name = "opentelemetry-instrumentation-asgi", specifier = "==0.65b0" },
-    { name = "opentelemetry-sdk", specifier = "==1.44.0" },
-    { name = "prometheus-client", specifier = "==0.26.0" },
-    { name = "pyjwt", specifier = "==2.13.0" },
-    { name = "pytest", specifier = "==9.1.1" },
-    { name = "redis", specifier = "==8.1.0" },
-    { name = "ruff", specifier = "==0.16.4" },
-    { name = "ty", specifier = "==0.0.74" },
+sdist = { url = "https://files.pythonhosted.org/packages/36/cc/5ff8899b60d26f703039cdcff7d9567a635dc390a4766f1d42c600eb6448/flasgo-0.10.0.tar.gz", hash = "sha256:b3ab6b9d310905e9bd571b7a61c851445d289278ed60d860b4c6420e4c1250ea", size = 285816, upload-time = "2026-09-26T01:28:38.052Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b4/24/21f9a0a1da55167c5d0b3b3fec70a8ebac87aa1de6373505b171def639e3/flasgo-0.10.0-py3-none-any.whl", hash = "sha256:deaa093fa6826632bc0441292cbeedd35a29a4727bac20911b22c280f435e1e3", size = 173394, upload-time = "2026-09-26T01:28:36.363Z" },
 ]
 
 [[package]]

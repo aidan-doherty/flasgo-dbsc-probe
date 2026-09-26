@@ -70,18 +70,28 @@ your normal Chrome or a missing command line, the flags never applied and regist
 
 ## Run
 
-The repo depends on sibling checkouts of its own project root, via
-[uv path sources](https://docs.astral.sh/uv/reference/settings/#path-dependencies):
-
-```
-../flasgo
-../dbsc-python
-```
+`dbsc` and `flasgo` come from PyPI, so a fresh clone needs nothing but `uv`:
 
 ```bash
 uv sync
 uv run uvicorn dbsc_probe.app:create_app --factory --host 127.0.0.1 --port 8000
 ```
+
+To pick up the latest releases, re-resolve and sync:
+
+```bash
+uv lock --upgrade-package flasgo --upgrade-package dbsc && uv sync
+```
+
+To test unreleased work in sibling checkouts instead, point uv at them with
+[editable path sources](https://docs.astral.sh/uv/reference/settings/#path-dependencies):
+
+```bash
+uv add --editable ../flasgo ../dbsc-python
+```
+
+That writes a `[tool.uv.sources]` table into `pyproject.toml`; delete it and re-run
+`uv lock` to go back to the published versions.
 
 Then open http://localhost:8000/ in the DBSC-capable browser. Plain `http` on loopback is a
 secure context, so the `Secure` cookies and the flasgo signed session work without TLS. A
