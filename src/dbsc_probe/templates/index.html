@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DBSC probe &middot; dbsc-python on flasgo</title>
+    <link rel="stylesheet" href="/static/probe.css">
+  </head>
+  <body>
+    <header>
+      <h1>DBSC probe</h1>
+      <p class="subtitle">dbsc-python wired into flasgo, driven by a real browser</p>
+    </header>
+
+    <section class="cards">
+      <div class="card card-status">
+        <h2>Registration</h2>
+        <p id="registration-state" class="state state-waiting">Waiting&hellip;</p>
+        <p id="registration-detail" class="detail"></p>
+        <pre id="registration-header" class="raw"></pre>
+      </div>
+
+      <div class="card card-device">
+        <h2>Device key</h2>
+        <pre id="device-key" class="raw empty">No device key yet. DBSC binds a key to this session when a DBSC-capable browser registers.</pre>
+      </div>
+
+      <div class="card card-cookie">
+        <h2>Bound cookie</h2>
+        <dl>
+          <dt>Name</dt><dd id="cookie-name">&ndash;</dd>
+          <dt>Present on request</dt><dd id="cookie-present">&ndash;</dd>
+          <dt>Next refresh in</dt><dd id="cookie-countdown">&ndash;</dd>
+        </dl>
+        <p id="cookie-check" class="detail"></p>
+      </div>
+    </section>
+
+    <section class="card card-jwt">
+      <h2>Registration JWT</h2>
+      <div class="jwt-columns">
+        <pre id="jwt-header" class="raw empty">No registration JWT yet.</pre>
+        <pre id="jwt-payload" class="raw empty"></pre>
+      </div>
+      <pre id="jwt-raw" class="raw empty"></pre>
+    </section>
+
+    <section class="card card-instructions">
+      <h2>Session instructions</h2>
+      <pre id="instructions" class="raw empty">The browser has not registered this probe.</pre>
+    </section>
+
+    <section class="card card-check">
+      <h2>Enforcement gate</h2>
+      <pre id="gate" class="raw empty">Run the probe for the gate decision.</pre>
+    </section>
+
+    <section class="card card-timeline">
+      <h2>Timeline</h2>
+      <ol id="timeline" class="timeline"></ol>
+    </section>
+
+    <footer>
+      <button id="restart" type="button">Run the test again</button>
+      <button id="copy" type="button">Copy diagnostic</button>
+      <span id="probe-badge" class="badge"></span>
+    </footer>
+
+    <script src="/static/probe.js" defer></script>
+  </body>
+</html>

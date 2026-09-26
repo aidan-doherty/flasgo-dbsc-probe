@@ -1,0 +1,45 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (uv)
+.venv/
+venv/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test & tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ty_cache/
+.tox/
+.nox/
+
+# Coverage
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Environment & secrets (DBSC_PROBE_SECRET)
+.env
+.env.*
+!.env.example
+
+# DBSC e2e browser profiles / traces
+e2e-artifacts/
+*.user-data-dir/
+
+# Editors & OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
